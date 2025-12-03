@@ -1,10 +1,10 @@
 <h1 style="margin: 0;">Pexel API - Photo Gallery</h1>
-<a href="https://www.pexels.com">Photos provided by Pexels</a>
+www.pexels.com">Photos provided by Pexels</a>
 <br><br>
 
 <%= form_with(url: "/", method: :get, data: { turbo: false} ) do %>
   <%= label_tag(:query, "Pexel Collection ID:") %>
-  <%= text_field_tag(:query) %>
+  <%= text_field_tag(:query, nil, placeholder: "example: zkxjill") %>
   <%= submit_tag("Search") %>
 <% end %>
 <br>
