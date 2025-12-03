@@ -1,7 +1,18 @@
-<h1>Pexel API - Photo Gallery</h1>
+<h1 style="margin: 0;">Pexel API - Photo Gallery</h1>
+<a href="https://www.pexels.com">Photos provided by Pexels</a>
+<br><br>
 
 <%= form_with(url: "/", method: :get, data: { turbo: false} ) do %>
   <%= label_tag(:query, "Pexel Collection ID:") %>
   <%= text_field_tag(:query) %>
   <%= submit_tag("Search") %>
+<% end %>
+<br>
+
+<% if @photos.present? %>
+  <% @photos.each do |photo| %>
+    <img src="<%= photo.src['medium'] %>" alt="Pexels photo">
+  <% end %>
+<% else %>
+  <p>No photos found in this collection.</p>
 <% end %>
